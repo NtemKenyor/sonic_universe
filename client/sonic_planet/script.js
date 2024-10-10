@@ -1,6 +1,7 @@
 window.onload = function() {
-  let URL = "https://roynek.com/sonic_universe/client/sonic_planet/api";
-  
+  let MAIN_URL = "https://roynek.com/sonic_universe/client/sonic_planet/api";
+  let URL = MAIN_URL + "/api/riddles";
+  // https://roynek.com/sonic_universe/client/sonic_planet/api/
   let riddles = [];
   let currentRiddle = null;
 
