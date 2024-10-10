@@ -1,1 +1,5 @@
 *node_modules/
+client/sonic_planet/api/*.json
+smart_contracts/**/target/
+client/sonic_planet/api/public
+client/sonic_planet/api/tmp
