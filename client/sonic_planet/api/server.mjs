@@ -25,6 +25,11 @@ app.get('/api/riddles', (req, res) => {
   res.json(randomRiddles);
 });
 
+// Return "Hello World" on the root directory "/"
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
