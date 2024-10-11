@@ -1,3 +1,4 @@
+
 import express from 'express';
 import cors from 'cors';
 
@@ -19,6 +20,8 @@ const riddles = [
   { riddle: "What can fill a room but takes up no space?", answer: "Light" }
 ];
 
+console.log('Something conncted');
+
 // Endpoint to return random riddles
 app.get('/api/riddles', (req, res) => {
   const randomRiddles = riddles.sort(() => 0.5 - Math.random()).slice(0, 5);
@@ -27,6 +30,7 @@ app.get('/api/riddles', (req, res) => {
 
 // Return "Hello World" on the root directory "/"
 app.get('/', (req, res) => {
+  console.log('Root route accessed');
   res.send('Hello World');
 });
 
