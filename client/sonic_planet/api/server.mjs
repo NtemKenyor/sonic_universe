@@ -9,6 +9,7 @@ let MAIN_DIR = "/sonic_universe/client/sonic_planet/api";
 app.use(cors());
 
 
+// TODO:
 // the goal is to get the data from the blockchain
 // get the riddles from the logs of the blocks in Sonic Devnet
 // Riddles data
