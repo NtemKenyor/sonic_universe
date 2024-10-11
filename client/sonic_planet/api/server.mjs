@@ -2,12 +2,15 @@ import express from 'express';
 import cors from 'cors';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;  // Adjust the port for cPanel environment
 
 // Enable CORS for all routes
 app.use(cors());
 
-//TODO: We would interact with the blockchain program and get the logs as the json struture...
+
+// the goal is to get the data from the blockchain
+// get the riddles from the logs of the blocks in Sonic Devnet
+// Riddles data
 const riddles = [
   { riddle: "What has keys but can't open locks?", answer: "Keyboard" },
   { riddle: "What comes down but never goes up?", answer: "Rain" },
@@ -22,8 +25,10 @@ app.get('/api/riddles', (req, res) => {
   res.json(randomRiddles);
 });
 
+// Start the server
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server running on port ${port}`);
 });
+
 
 // 3g1GxyxjDpL5jZMiU4e39ngUBnUKjnZYEPXQRbxud7mH
