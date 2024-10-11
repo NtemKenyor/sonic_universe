@@ -34,6 +34,11 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
+// Serve "Hello World" at /sonic_universe/client/sonic_planet/api/
+app.get('/sonic_universe/client/sonic_planet/api/', (req, res) => {
+  res.send('Hello World 2');
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
