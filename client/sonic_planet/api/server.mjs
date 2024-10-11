@@ -4,7 +4,7 @@ import cors from 'cors';
 
 const app = express();
 const port = process.env.PORT || 3000;  // Adjust the port for cPanel environment
-
+let MAIN_DIR = "/sonic_universe/client/sonic_planet/api";
 // Enable CORS for all routes
 app.use(cors());
 
@@ -23,19 +23,13 @@ const riddles = [
 console.log('Something conncted');
 
 // Endpoint to return random riddles
-app.get('/api/riddles', (req, res) => {
+app.get(MAIN_DIR+'/riddles', (req, res) => {
   const randomRiddles = riddles.sort(() => 0.5 - Math.random()).slice(0, 5);
   res.json(randomRiddles);
 });
 
-// Return "Hello World" on the root directory "/"
-app.get('/', (req, res) => {
-  console.log('Root route accessed');
-  res.send('Hello World');
-});
-
 // Serve "Hello World" at /sonic_universe/client/sonic_planet/api/
-app.get('/sonic_universe/client/sonic_planet/api/', (req, res) => {
+app.get(MAIN_DIR+'/', (req, res) => {
   res.send('Hello World 2');
 });
 
